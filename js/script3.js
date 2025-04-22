@@ -156,7 +156,7 @@ document.getElementById('uploadForm').addEventListener('submit', async (e) => {
   const formData = new FormData();
   formData.append('profilePic', fileInput.files[0]);
 
-  const res = await fetch('http://localhost:5501/upload', {
+  const res = await fetch('https://yallafix1.onrender.com/upload', {
     method: 'POST',
     body: formData
   });

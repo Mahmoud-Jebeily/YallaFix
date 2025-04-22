@@ -1,6 +1,6 @@
 const userId = 1;  // Change this to test different users
 
-fetch(`http://localhost:5501/profile/${userId}`)
+fetch(`https://yallafix1.onrender.com/profile/${userId}`)
     .then(response => response.json())
     .then(user => {
         const profileDiv = document.getElementById("profile");

@@ -57,7 +57,7 @@ import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/
             if (user) {
                 const uid = user.uid;
                 try {
-                    const res = await fetch(`http://localhost:5501/findTechnicians?uid=${uid}&service=${encodeURIComponent(service)}`);
+                    const res = await fetch(`https://yallafix1.onrender.com/findTechnicians?uid=${uid}&service=${encodeURIComponent(service)}`);
                     if (!res.ok) throw new Error("Failed to fetch technicians");
                     const technicians = await res.json();
                     displayTechnicians(technicians);
@@ -145,7 +145,7 @@ function displayTechnicians(technicians) {
             };
 
             try {
-                const response = await fetch('http://localhost:5501/api/create_appointment', {
+                const response = await fetch('https://yallafix1.onrender.com/api/create_appointment', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(newAppointment),
@@ -171,7 +171,7 @@ function displayTechnicians(technicians) {
             };
 
             // Send the request to the server
-            const response = await fetch('http://localhost:3000/api/service-requests', {
+            const response = await fetch('https://yallafix1.onrender.com/api/service-requests', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(newRequest),
